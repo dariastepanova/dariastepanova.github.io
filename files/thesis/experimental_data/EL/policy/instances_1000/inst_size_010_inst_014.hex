@@ -1,0 +1,89 @@
+hasowner("p1","s23").
+project("p1").
+hasowner("p1","s27").
+project("p1").
+hasowner("p1","s40").
+project("p1").
+hasowner("p1","s43").
+project("p1").
+hasowner("p1","s47").
+project("p1").
+hasowner("p1","s50").
+project("p1").
+hasowner("p1","s53").
+project("p1").
+hasowner("p1","s57").
+project("p1").
+hasowner("p1","s60").
+project("p1").
+hasowner("p1","s64").
+project("p1").
+hasowner("p1","s79").
+project("p1").
+hasowner("p1","s90").
+project("p1").
+hasowner("p2","s112").
+project("p2").
+hasowner("p2","s113").
+project("p2").
+hasowner("p2","s120").
+project("p2").
+hasowner("p2","s123").
+project("p2").
+hasowner("p2","s147").
+project("p2").
+hasowner("p2","s158").
+project("p2").
+hasowner("p2","s185").
+project("p2").
+hasowner("p2","s192").
+project("p2").
+hasowner("p2","s199").
+project("p2").
+hasowner("p3","s210").
+project("p3").
+hasowner("p3","s221").
+project("p3").
+hasowner("p3","s228").
+project("p3").
+hasowner("p3","s232").
+project("p3").
+hasowner("p3","s233").
+project("p3").
+hasowner("p3","s238").
+project("p3").
+hasowner("p3","s242").
+project("p3").
+hasowner("p3","s278").
+project("p3").
+hasowner("p3","s288").
+project("p3").
+hasowner("p3","s292").
+project("p3").
+hasowner("p3","s297").
+project("p3").
+hasowner("p4","s313").
+project("p4").
+hasowner("p4","s332").
+project("p4").
+hasowner("p4","s383").
+project("p4").
+hasowner("p4","s393").
+project("p4").
+% owner of a file is a chief
+chief(Y):-hasowner(X,Y),projfile(X).
+
+% staff request is granted unless it is denied 
+grant(X):-&cDL["instances/inst_size_010_inst_014.owl",p,b,c,d,"StaffRequest"](X), not deny(X).
+
+% blacklisted staff request is always denied
+deny(X):-&cDL["instances/inst_size_010_inst_014.owl",q,b,c,d,"BlacklistedStaffRequest"](X).
+
+% owners of files must have access to them
+:-hasowner(Y,Z), deny(X), &rDL["instances/inst_size_010_inst_014.owl",a,b,c,d,"hasTarget"](X,Y), &rDL["instances/inst_size_010_inst_014.owl",a,b,c,d,"hasSubject"](X,Z).
+
+% update information for the first DL-atom
+p("Project",X):-projfile(X).
+
+% update for the second DL-atom
+q("Staff",X):-chief(X).

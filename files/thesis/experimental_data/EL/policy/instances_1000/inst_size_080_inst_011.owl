@@ -1,0 +1,1178 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY policy "http://www.semanticweb.org/ontologies/2014/4/policy.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/ontologies/2014/4/policy.owl#"
+     xml:base="http://www.semanticweb.org/ontologies/2014/4/policy.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:policy="http://www.semanticweb.org/ontologies/2014/4/policy.owl#">
+    <owl:Ontology rdf:about=""/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/4/policy.owl#hasAction -->
+
+    <owl:ObjectProperty rdf:about="#hasAction"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/4/policy.owl#hasSubject -->
+
+    <owl:ObjectProperty rdf:about="#hasSubject"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/4/policy.owl#hasTarget -->
+
+    <owl:ObjectProperty rdf:about="#hasTarget"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/4/policy.owl#Action -->
+
+    <owl:Class rdf:about="#Action"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/4/policy.owl#Blacklisted -->
+
+    <owl:Class rdf:about="#Blacklisted">
+        <rdfs:subClassOf rdf:resource="#Unauthorized"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/4/policy.owl#Project -->
+
+    <owl:Class rdf:about="#Project"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/4/policy.owl#Staff -->
+
+    <owl:Class rdf:about="#Staff"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/4/policy.owl#StaffRequest -->
+
+    <owl:Class rdf:about="#StaffRequest">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasAction"/>
+                        <owl:someValuesFrom rdf:resource="#Action"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasSubject"/>
+                        <owl:someValuesFrom rdf:resource="#Staff"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasTarget"/>
+                        <owl:someValuesFrom rdf:resource="#Project"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/4/policy.owl#Unauthorized -->
+
+    <owl:Class rdf:about="#Unauthorized">
+        <rdfs:subClassOf rdf:resource="#Staff"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/4/policy.owl#UnauthorizedStaffRequest -->
+
+    <owl:Class rdf:about="#UnauthorizedStaffRequest">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#StaffRequest"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasSubject"/>
+                        <owl:someValuesFrom rdf:resource="#UnauthorizedStaffRequest"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="#StaffRequest"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+<owl:Thing rdf:about="#s1"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s2"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s3"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s4"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s5"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s6"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s7"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s8"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s9"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s10"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s11"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s12"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s13"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s14"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s15"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s16"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s17"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s18"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s19"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s20"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s21"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s22"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s23"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s24"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s25"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s26"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s27"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s28"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s29"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s30"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s31"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s32"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s33"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s34"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s35"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s36"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s37"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s38"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s39"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s40"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s41"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s42"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s43"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s44"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s45"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s46"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s47"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s48"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s49"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s50"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s51"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s52"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s53"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s54"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s55"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s56"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s57"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s58"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s59"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s60"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s61"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s62"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s63"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s64"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s65"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s66"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s67"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s68"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s69"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s70"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s71"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s72"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s73"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s74"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s75"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s76"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s77"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s78"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s79"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s80"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s81"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s82"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s83"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s84"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s85"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s86"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s87"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s88"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s89"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s90"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s91"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s92"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s93"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s94"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s95"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s96"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s97"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s98"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s99"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s100"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s101"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s102"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s103"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s104"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s105"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s106"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s107"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s108"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s109"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s110"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s111"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s112"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s113"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s114"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s115"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s116"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s117"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s118"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s119"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s120"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s121"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s122"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s123"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s124"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s125"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s126"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s127"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s128"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s129"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s130"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s131"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s132"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s133"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s134"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s135"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s136"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s137"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s138"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s139"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s140"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s141"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s142"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s143"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s144"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s145"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s146"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s147"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s148"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s149"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s150"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s151"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s152"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s153"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s154"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s155"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s156"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s157"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s158"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s159"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s160"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s161"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s162"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s163"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s164"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s165"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s166"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s167"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s168"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s169"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s170"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s171"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s172"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s173"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s174"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s175"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s176"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s177"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s178"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s179"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s180"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s181"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s182"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s183"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s184"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s185"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s186"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s187"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s188"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s189"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s190"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s191"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s192"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s193"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s194"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s195"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s196"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s197"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s198"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s199"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s200"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s201"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s202"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s203"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s204"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s205"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s206"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s207"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s208"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s209"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s210"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s211"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s212"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s213"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s214"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s215"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s216"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s217"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s218"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s219"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s220"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s221"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s222"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s223"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s224"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s225"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s226"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s227"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s228"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s229"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s230"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s231"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s232"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s233"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s234"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s235"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s236"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s237"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s238"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s239"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s240"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s241"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s242"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s243"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s244"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s245"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s246"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s247"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s248"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s249"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s250"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s251"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s252"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s253"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s254"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s255"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s256"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s257"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s258"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s259"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s260"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s261"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s262"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s263"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s264"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s265"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s266"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s267"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s268"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s269"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s270"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s271"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s272"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s273"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s274"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s275"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s276"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s277"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s278"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s279"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s280"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s281"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s282"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s283"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s284"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s285"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s286"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s287"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s288"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s289"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s290"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s291"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s292"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s293"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s294"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s295"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s296"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s297"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s298"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s299"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s300"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s301"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s302"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s303"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s304"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s305"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s306"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s307"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s308"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s309"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s310"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s311"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s312"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s313"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s314"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s315"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s316"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s317"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s318"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s319"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s320"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s321"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s322"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s323"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s324"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s325"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s326"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s327"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s328"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s329"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s330"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s331"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s332"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s333"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s334"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s335"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s336"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s337"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s338"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s339"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s340"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s341"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s342"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s343"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s344"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s345"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s346"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s347"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s348"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s349"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s350"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s351"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s352"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s353"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s354"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s355"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s356"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s357"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s358"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s359"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s360"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s361"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s362"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s363"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s364"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s365"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s366"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s367"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s368"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s369"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s370"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s371"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s372"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s373"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s374"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s375"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s376"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s377"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s378"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s379"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s380"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s381"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s382"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s383"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s384"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s385"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s386"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s387"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s388"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s389"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s390"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s391"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s392"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s393"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s394"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s395"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s396"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s397"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s398"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s399"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s400"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s401"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s402"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s403"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s404"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s405"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s406"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s407"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s408"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s409"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s410"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s411"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s412"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s413"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s414"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s415"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s416"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s417"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s418"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s419"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s420"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s421"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s422"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s423"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s424"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s425"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s426"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s427"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s428"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s429"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s430"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s431"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s432"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s433"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s434"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s435"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s436"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s437"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s438"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s439"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s440"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s441"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s442"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s443"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s444"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s445"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s446"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s447"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s448"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s449"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s450"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s451"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s452"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s453"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s454"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s455"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s456"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s457"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s458"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s459"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s460"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s461"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s462"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s463"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s464"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s465"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s466"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s467"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s468"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s469"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s470"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s471"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s472"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s473"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s474"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s475"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s476"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s477"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s478"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s479"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s480"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s481"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s482"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s483"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s484"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s485"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s486"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s487"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s488"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s489"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s490"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s491"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s492"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s493"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s494"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s495"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s496"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s497"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s498"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s499"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s500"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s501"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s502"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s503"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s504"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s505"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s506"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s507"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s508"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s509"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s510"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s511"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s512"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s513"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s514"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s515"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s516"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s517"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s518"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s519"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s520"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s521"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s522"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s523"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s524"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s525"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s526"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s527"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s528"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s529"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s530"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s531"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s532"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s533"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s534"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s535"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s536"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s537"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s538"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s539"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s540"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s541"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s542"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s543"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s544"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s545"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s546"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s547"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s548"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s549"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s550"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s551"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s552"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s553"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s554"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s555"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s556"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s557"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s558"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s559"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s560"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s561"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s562"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s563"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s564"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s565"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s566"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s567"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s568"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s569"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s570"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s571"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s572"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s573"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s574"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s575"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s576"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s577"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s578"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s579"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s580"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s581"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s582"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s583"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s584"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s585"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s586"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s587"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s588"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s589"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s590"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s591"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s592"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s593"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s594"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s595"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s596"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s597"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s598"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s599"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s600"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s601"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s602"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s603"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s604"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s605"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s606"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s607"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s608"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s609"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s610"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s611"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s612"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s613"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s614"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s615"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s616"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s617"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s618"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s619"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s620"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s621"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s622"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s623"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s624"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s625"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s626"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s627"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s628"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s629"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s630"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s631"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s632"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s633"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s634"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s635"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s636"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s637"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s638"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s639"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s640"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s641"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s642"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s643"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s644"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s645"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s646"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s647"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s648"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s649"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s650"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s651"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s652"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s653"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s654"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s655"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s656"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s657"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s658"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s659"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s660"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s661"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s662"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s663"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s664"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s665"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s666"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s667"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s668"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s669"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s670"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s671"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s672"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s673"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s674"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s675"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s676"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s677"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s678"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s679"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s680"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s681"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s682"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s683"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s684"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s685"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s686"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s687"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s688"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s689"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s690"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s691"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s692"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s693"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s694"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s695"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s696"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s697"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s698"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s699"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s700"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s701"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s702"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s703"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s704"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s705"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s706"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s707"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s708"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s709"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s710"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s711"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s712"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s713"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s714"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s715"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s716"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s717"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s718"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s719"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s720"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s721"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s722"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s723"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s724"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s725"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s726"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s727"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s728"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s729"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s730"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s731"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s732"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s733"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s734"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s735"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s736"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s737"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s738"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s739"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s740"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s741"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s742"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s743"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s744"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s745"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s746"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s747"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s748"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s749"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s750"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s751"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s752"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s753"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s754"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s755"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s756"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s757"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s758"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s759"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s760"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s761"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s762"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s763"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s764"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s765"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s766"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s767"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s768"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s769"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s770"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s771"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s772"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s773"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s774"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s775"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s776"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s777"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s778"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s779"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s780"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s781"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s782"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s783"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s784"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s785"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s786"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s787"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s788"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s789"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s790"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s791"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s792"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s793"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s794"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s795"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s796"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s797"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s798"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s799"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s800"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s801"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s802"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s803"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s804"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s805"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s806"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s807"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s808"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s809"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s810"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s811"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s812"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s813"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s814"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s815"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s816"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s817"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s818"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s819"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s820"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s821"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s822"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s823"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s824"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s825"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s826"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s827"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s828"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s829"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s830"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s831"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s832"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s833"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s834"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s835"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s836"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s837"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s838"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s839"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s840"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s841"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s842"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s843"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s844"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s845"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s846"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s847"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s848"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s849"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s850"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s851"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s852"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s853"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s854"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s855"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s856"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s857"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s858"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s859"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s860"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s861"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s862"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s863"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s864"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s865"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s866"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s867"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s868"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s869"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s870"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s871"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s872"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s873"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s874"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s875"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s876"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s877"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s878"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s879"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s880"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s881"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s882"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s883"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s884"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s885"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s886"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s887"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s888"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s889"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s890"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s891"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s892"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s893"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s894"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s895"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s896"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s897"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s898"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s899"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s900"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s901"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s902"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s903"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s904"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s905"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s906"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s907"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s908"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s909"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s910"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s911"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s912"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s913"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s914"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s915"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s916"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s917"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s918"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s919"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s920"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s921"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s922"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s923"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s924"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s925"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s926"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s927"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s928"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s929"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s930"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s931"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s932"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s933"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s934"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s935"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s936"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s937"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s938"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s939"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s940"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s941"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s942"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s943"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s944"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s945"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s946"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s947"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s948"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s949"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s950"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s951"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s952"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s953"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s954"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s955"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s956"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s957"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s958"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s959"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s960"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s961"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s962"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s963"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s964"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s965"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s966"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s967"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s968"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s969"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s970"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s971"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s972"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s973"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s974"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s975"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s976"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s977"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s978"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s979"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s980"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s981"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s982"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s983"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s984"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s985"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s986"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s987"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s988"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s989"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s990"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s991"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s992"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s993"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s994"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s995"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s996"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s997"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s998"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s999"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s1000"><rdf:type rdf:resource="#Staff"/></owl:Thing>
+<owl:Thing rdf:about="#s1"><rdf:type rdf:resource="#Unauthorized"/></owl:Thing>
+<owl:Thing rdf:about="#s2"><rdf:type rdf:resource="#Unauthorized"/></owl:Thing>
+<owl:Thing rdf:about="#s3"><rdf:type rdf:resource="#Unauthorized"/></owl:Thing>
+<owl:Thing rdf:about="#s4"><rdf:type rdf:resource="#Unauthorized"/></owl:Thing>
+<owl:Thing rdf:about="#s5"><rdf:type rdf:resource="#Unauthorized"/></owl:Thing>
+<owl:Thing rdf:about="#s6"><rdf:type rdf:resource="#Unauthorized"/></owl:Thing>
+<owl:Thing rdf:about="#s7"><rdf:type rdf:resource="#Unauthorized"/></owl:Thing>
+<owl:Thing rdf:about="#s8"><rdf:type rdf:resource="#Unauthorized"/></owl:Thing>
+<owl:Thing rdf:about="#s9"><rdf:type rdf:resource="#Unauthorized"/></owl:Thing>
+<owl:Thing rdf:about="#s10"><rdf:type rdf:resource="#Unauthorized"/></owl:Thing>
+<owl:Thing rdf:about="#s11"><rdf:type rdf:resource="#Unauthorized"/></owl:Thing>
+<owl:Thing rdf:about="#s12"><rdf:type rdf:resource="#Unauthorized"/></owl:Thing>
+<owl:Thing rdf:about="#s13"><rdf:type rdf:resource="#Unauthorized"/></owl:Thing>
+<owl:Thing rdf:about="#s14"><rdf:type rdf:resource="#Unauthorized"/></owl:Thing>
+<owl:Thing rdf:about="#s15"><rdf:type rdf:resource="#Unauthorized"/></owl:Thing>
+<owl:Thing rdf:about="#s16"><rdf:type rdf:resource="#Unauthorized"/></owl:Thing>
+<owl:Thing rdf:about="#s17"><rdf:type rdf:resource="#Unauthorized"/></owl:Thing>
+<owl:Thing rdf:about="#s18"><rdf:type rdf:resource="#Unauthorized"/></owl:Thing>
+<owl:Thing rdf:about="#s19"><rdf:type rdf:resource="#Unauthorized"/></owl:Thing>
+<owl:Thing rdf:about="#s20"><rdf:type rdf:resource="#Unauthorized"/></owl:Thing>
+<owl:Thing rdf:about="#s21"><rdf:type rdf:resource="#Unauthorized"/></owl:Thing>
+<owl:Thing rdf:about="#s22"><rdf:type rdf:resource="#Unauthorized"/></owl:Thing>
+<owl:Thing rdf:about="#s23"><rdf:type rdf:resource="#Unauthorized"/></owl:Thing>
+<owl:Thing rdf:about="#s24"><rdf:type rdf:resource="#Unauthorized"/></owl:Thing>
+<owl:Thing rdf:about="#s25"><rdf:type rdf:resource="#Unauthorized"/></owl:Thing>
+<owl:Thing rdf:about="#s26"><rdf:type rdf:resource="#Unauthorized"/></owl:Thing>
+<owl:Thing rdf:about="#s27"><rdf:type rdf:resource="#Unauthorized"/></owl:Thing>
+<owl:Thing rdf:about="#s28"><rdf:type rdf:resource="#Unauthorized"/></owl:Thing>
+<owl:Thing rdf:about="#s29"><rdf:type rdf:resource="#Unauthorized"/></owl:Thing>
+<owl:Thing rdf:about="#s30"><rdf:type rdf:resource="#Unauthorized"/></owl:Thing>
+<owl:Thing rdf:about="#s31"><rdf:type rdf:resource="#Unauthorized"/></owl:Thing>
+<owl:Thing rdf:about="#s32"><rdf:type rdf:resource="#Unauthorized"/>

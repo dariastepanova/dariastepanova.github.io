@@ -1,0 +1,85 @@
+hasowner("p1","s3").
+project("p1").
+hasowner("p1","s13").
+project("p1").
+hasowner("p1","s15").
+project("p1").
+hasowner("p1","s24").
+project("p1").
+hasowner("p1","s33").
+project("p1").
+hasowner("p1","s34").
+project("p1").
+hasowner("p1","s37").
+project("p1").
+hasowner("p1","s63").
+project("p1").
+hasowner("p1","s68").
+project("p1").
+hasowner("p2","s106").
+project("p2").
+hasowner("p2","s134").
+project("p2").
+hasowner("p2","s142").
+project("p2").
+hasowner("p2","s146").
+project("p2").
+hasowner("p2","s152").
+project("p2").
+hasowner("p2","s159").
+project("p2").
+hasowner("p2","s167").
+project("p2").
+hasowner("p2","s175").
+project("p2").
+hasowner("p2","s177").
+project("p2").
+hasowner("p2","s200").
+project("p2").
+hasowner("p3","s204").
+project("p3").
+hasowner("p3","s208").
+project("p3").
+hasowner("p3","s210").
+project("p3").
+hasowner("p3","s220").
+project("p3").
+hasowner("p3","s221").
+project("p3").
+hasowner("p3","s227").
+project("p3").
+hasowner("p3","s259").
+project("p3").
+hasowner("p3","s288").
+project("p3").
+hasowner("p3","s292").
+project("p3").
+hasowner("p4","s305").
+project("p4").
+hasowner("p4","s337").
+project("p4").
+hasowner("p4","s361").
+project("p4").
+hasowner("p4","s387").
+project("p4").
+hasowner("p4","s388").
+project("p4").
+hasowner("p4","s393").
+project("p4").
+% owner of a file is a chief
+chief(Y):-hasowner(X,Y),projfile(X).
+
+% staff request is granted unless it is denied 
+grant(X):-&cDL["instances/inst_size_010_inst_011.owl",p,b,c,d,"StaffRequest"](X), not deny(X).
+
+% blacklisted staff request is always denied
+deny(X):-&cDL["instances/inst_size_010_inst_011.owl",q,b,c,d,"BlacklistedStaffRequest"](X).
+
+% owners of files must have access to them
+:-hasowner(Y,Z), deny(X), &rDL["instances/inst_size_010_inst_011.owl",a,b,c,d,"hasTarget"](X,Y), &rDL["instances/inst_size_010_inst_011.owl",a,b,c,d,"hasSubject"](X,Z).
+
+% update information for the first DL-atom
+p("Project",X):-projfile(X).
+
+% update for the second DL-atom
+q("Staff",X):-chief(X).

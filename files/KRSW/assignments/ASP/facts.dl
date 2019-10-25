@@ -1,0 +1,45 @@
+% There are 5 different castles
+
+castle(1).
+castle(2).
+castle(3).
+castle(4).
+castle(5).
+
+
+% The castles have different colors
+
+color(blue).
+color(yellow). 
+color(brown).
+color(purple).
+color(pink).
+
+
+% The dukes who own the castles have different vehicles
+
+vehicle(bike).
+vehicle(motocycle).
+vehicle(scooter).
+vehicle(boat).
+vehicle(minivan).
+
+
+% The dukes also have different pets living in their castles
+
+pet(deer).
+pet(monkey).
+pet(camel).
+pet(panda).
+pet(elephant).
+
+% and there are different types of fruit growing in the parks by the castles. 
+
+fruit(apple).
+fruit(orange).
+fruit(banana).
+fruit(cherry).
+fruit(mandarin).
+
+
+

@@ -1,0 +1,395 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% "ModernCV" CV and Cover Letter
+% LaTeX Template
+% Version 1.1 (9/12/12)
+%\jmath{}
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Xavier Danaux (xdanaux@gmail.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important note:
+% This template requires the moderncv.cls and .sty files to be in the same 
+% directory as this .tex file. These files provide the resume style and themes 
+% used for structuring the document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt,a4paper,sans]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
+
+\moderncvstyle{classic} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+%\usepackage[sorting=ydnt]{biblatex}
+\usepackage[scale=0.75]{geometry} % Reduce document margins
+%\setlength{\hintscolumnwidth}{3cm} % Uncomment to change the width of the dates column
+%\setlength{\makecvtitlenamewidth}{10cm} % For the 'classic' style, uncomment to adjust the width of the space allocated to your name
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CONTACT INFORMATION SECTION
+%----------------------------------------------------------------------------------------
+
+\firstname{\Huge{Daria}} % Your first name
+\familyname{\Huge{Stepanova} \Large{\textbf{(Dr. techn.)}}} % Your last name
+
+% All information in this block is optional, comment out any lines you don't need
+\title{Curriculum Vitae}
+\address{Max Planck Institute of Informatics}{Saarb\"{u}cken, Germany}
+\mobile{+49 176 2786 4724}
+\phone{+49 681 9325 5004}
+\email{dstepano@mpi-inf.mpg.de}
+\homepage{http://people.mpi-inf.mpg.de/~dstepano/}{http://people.mpi-inf.mpg.de/$\sim$dstepano/} % The first argument is the url for the clickable link, the second argument is the url displayed in the template - this allows special characters to be displayed such as the tilde in this example
+%\extrainfo{additional information}
+\photo[70pt][0.4pt]{pictures/picture} % The first bracket is the picture height, the second is the thickness of the frame around the picture (0pt for no frame)
+%\quote{"A witty and playful quotation" - John Smith}
+
+%----------------------------------------------------------------------------------------
+
+
+\begin{document}
+
+\makecvtitle % Print the CV title
+
+%\thispagestyle{empty} 
+%----------------------------------------------------------------------------------------
+%	PERSONAL INFO
+% ----------------------------------------------------------------------------------------
+\section{Personal Information}
+\cvitem{\small{\textbf{Born}}}{May 7, 1988 in St. Petersburg, Russia}
+\cvitem{\small{\textbf{Nationality}}}{Russian}
+%\cvitem{\small{\textbf{Family status}}}{unmarried, no children}
+\cvitem{\small{\textbf{Languages}}}{Russian (native speaker), English
+  (proficient user), German (upper-intermediate)}
+\bigskip
+
+%----------------------------------------------------------------------------------------
+%  EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education}
+
+\cventry{07/11--04/15}{PhD student at Vienna University
+  of Technology}{Vienna}{Austria}{}{}
+\cvitem{Faculty}{Informatics}
+\cvitem{Program}{Mathematical Logic in Computer Science}{}{}{}{}
+\cvitem{Thesis}{Inconsistencies in Hybrid Knowledge Bases}
+\cvitem{Research area}{Logic Programming, Ontologies, Inconsistency Management}
+\cvitem{Supervisor}{O. Univ. Prof. Dr. techn. Thomas Eiter}
+\cvitem{Co-supervisor}{Dr. Michael Fink}
+\cvitem{}{Average grade: 1.0/1.0 (\emph{graduation with distinction})}
+\cvitem{}{}{}
+\bigskip
+
+  % Arguments not required can be left empty
+\cventry{09/05--07/10}{Diploma student at St. Petersburg State University}{St. Petersburg}{Russia}{}{}
+\cvitem{}{\textbf{equiv. to BSc + MSc}}
+\cvitem{Faculty}{Mathematics and Mechanics}
+\cvitem{Specialization}{Applied Informatics}
+\cvitem{Thesis}{Computer-aided Resolution of Unsatisfiabilities in Ontologies}
+\cvitem{Supervisor}{Prof. Dr. techn. Boris Novikov}
+\cvitem{}{Average grade: 4.75/5.0 (\emph{graduation with distinction})}
+
+\bigskip
+
+\section{Awards and Scholarships}
+\cvitem{2016--2018}{\href{https://www.mpi-inf.mpg.de/news/employment/new-lise-meitner-awardees-2016/}{Lise Meitner Award Fellowship of Max Planck Institute for Informatics}}
+\cvitem{2011--2015}{\href{http://www.dbai.tuwien.ac.at/drkolleg/index.html}{Scholarship for a Doctoral Program ``Mathematical Logic in Computer Science''}}
+
+
+\section{Continuing Education}
+\cventry{09/16-10/16}{Online course}{}{}{}{}
+\cvitem{}{Exploratory Data Analysis by Johns Hopkins University on Coursera}
+%\cvitem{}{Machine Learning by Stanford University on Coursera (in progress)}
+\cvitem{}{}
+\cventry{10/11--12/12}{Student at Vienna University of Technology}{Vienna}{Austria}{}{}
+\cvitem{}{German as a foreign language}
+\cvitem{}{Levels completed: A 2.1, B 2.2}
+\cvitem{}{}
+\cventry{10/06--07/07}{Student at St. Petersburg State University}{St. Petersburg}{Russia}{}{}
+\cvitem{}{Department of Linguistics}
+\cvitem{}{English for professionals}
+\cvitem{}{Level completed: advanced}
+
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Work Experience}
+\cventry{11/17--present}{Senior researcher at Max Planck Institute for Informatics (MPII)}{$\;\;\;\;$Saarbr{\"u}cken}{Germany}{}{}
+\cvitem{Group}{Databases and Information Systems group}
+\cvitem{}{\textbf{\emph{Responsibilities:}}}
+\cvlistitem{Head of Semantic Data research direction}
+\cvlistitem{Student selection and supervision}
+\cvlistitem{Teaching}
+
+
+\cvitem{}{}
+\cventry{10/15--10/17}{Postdoctoral researcher at Max Planck Institute for Informatics (MPII)}{$\;\;\;\;$Saarbr{\"u}cken}{Germany}{}{}
+\cvitem{Group}{Databases and Information Systems group}
+\cvitem{Supervisor}{Prof. Gerhard Weikum}
+%\cvitem{Research area}{Semantic Data Mining in Knowledge Graphs}
+\cvitem{}{\textbf{\emph{Responsibilities:}}}
+\cvlistitem{Develop algorithms for mining logical formalisms from Knowledge Graphs}
+\cvlistitem{Student selection and supervision}
+\cvlistitem{Teaching}
+\cvitem{}{\textbf{\emph{Technologies and skills:}}}
+\cvlistitem{Data mining, inductive logic programming}
+
+
+\cvitem{}{}
+\cventry{07/11--07/15}{Research assistant at Vienna University of Technology}{Vienna}{Austria}{}{}
+\cvitem{}{Knowledge Based Systems group}
+\cvitem{}{\textbf{\emph{Responsibilities:}}}
+\cvlistitem{Develop and implement framework for repairing inconsistencies in hybrid knowledge bases (combinations of logic programs and ontologies)}
+\cvlistitem{Bachelor student supervision}
+\cvitem{}{\textbf{\emph{Technologies and skills:}}}
+\cvlistitem{C$\ensuremath{++}$, Unix Shells, OWL, RDF}
+\cvitem{}{\url{https://github.com/hexhex/dlliteplugin}}
+\cvlistitem{Declarative logic programming, description logics, complexity analysis}
+\cvitem{}{\textbf{\emph{Involved in projects:}}}
+\cvlistitem{Reasoning in Hybrid Knowledge Bases (2011--2012)}
+\cvitem{}{\url{http://www.kr.tuwien.ac.at/research/projects/hybridkb/index.html}}
+ \cvlistitem{Evaluation of ASP Programs with External Source Access (2014--2015)} 
+\cvitem{}{\url{http://www.kr.tuwien.ac.at/research/projects/hexhex/}}
+
+\cvitem{}{}
+\cventry{10/09--06/11}{Specialist on system integration at
+  ``eKassir''}{St. Petersburg}{Russia}{}{}
+\cvitem{}{Company develops software for payment systems and terminals}
+\cvitem{}{\textbf{\emph{Responsibilities:}}}
+\cvlistitem{Team lead in technical support and remote assistance} 
+\cvlistitem{System installation and adjustment on the client's side}
+\cvlistitem{Technical trainings for clients}
+\cvlistitem{Business trips: Podgorica (Montenegro), Akkra (Ghana)}
+
+\cvitem{}{}
+\cventry{09/08--03/09}{Research intern at Newcastle
+  University}{Newcastle-upon-Tyne}{UK}{}{}
+\cvitem{}{\textbf{\emph{Responsibilities:}}}
+\cvlistitem{Develop a knowledge-based system for information security decision-making}
+\cvitem{}{\textbf{\emph{Technologies and skills:}}}
+\cvlistitem{OWL, Java Script}
+\cvitem{}{\textbf{\emph{Involved in projects:}}}
+\cvlistitem{Trust Economics (2008-2009)}
+\cvitem{}{\url{https://wiki.cs.ncl.ac.uk/trusteconomics/TrustEconomics}}
+\cvitem{}{}
+
+\cventry{10/07--08/08, 04/09--10/09}{Part-time tutor of English for corporate clients at American Language Masters (ALM)}{St. Petersburg}{Russia}{}{}
+
+\bigskip
+
+\section{Research Visits}
+\cventry{02/2017}{University of Oxford, Oriel College}{Oxford}{UK}{}{}
+\cvitem{}{Project on semantically enhanced sequence mining}
+\cvitem{}{}
+
+\cventry{05/2016}{Research visit to University of Bari}{Bari}{Italy}{}{}
+\cvitem{}{Project on mining nonmonotonic rules from Knowledge Graphs}
+\bigskip
+
+\section{Computer Skills}
+\cvlistitem{\textbf{Programming Languages}}
+\cvitem{}{\textsc{java}, C, C$\ensuremath{++}$, Java Script, R}
+\cvlistitem{\textbf{Knowledge Based Systems}}
+\cvitem{}{RDF, RDFS, OWL, Logic Programming}
+\cvlistitem{\textbf{Operating Systems}}
+\cvitem{}{Linux (Ubuntu), Microsoft Windows}
+% \cvlistitem{\textbf{Text Processing}}
+% \cvitem{}{\LaTeX, HTML, Microsoft Office}
+
+\bigskip
+
+%----------------------------------------------------------------------------------------
+%  ADDITIONAL COMPUTER EXPERIENCE
+%----------------------------------------------------------------------------------------
+\section{Additional Computer Experience}
+\cvlistitem{Plugin for Repairing Inconsistent DL-programs (C$\ensuremath{++}$) within \textsf{dlvhex} framework} 
+\cvitem{}{$\;\;\;\;$\url{https://github.com/hexhex/dlliteplugin}}
+\cvlistitem{Participant at 6th Angry Birds AI competition (\url{http://www.aibirds.org
+  }), co-located with IJCAI 2017 as a member of the AngryHEX team\\ \textbf{Ranked 3rd out of 10 participants}}
+\cvlistitem{Knowledge Base for Justified Information Security Decision-making based on
+ISO 27002 (Information Security Standard) and UCISA Information Security Toolkit (\url{http://www.ucisa.ac.uk/istoolkit}) (OWL Ontology Web Language, JOWL Java Script library for visualizing OWL-RDFS documents)}
+% \cvlistitem{Developing a Computer Game (Turbo Pascal 7.0)}
+% \cvlistitem{Developing a Web Master (Java Script)}
+% \cvlistitem{Student project: Developing a tool for compressing Text Using Huffman's Algorithm (Java)}
+\cvlistitem{Diploma thesis project: Computer-aided Resolution of
+  Unsatisfiabilities in Ontologies (Java)}
+
+\bigskip
+
+%----------------------------------------------------------------------------------------
+% STUDENT SUPERVISION
+%----------------------------------------------------------------------------------------
+\section{Teaching and Student Supervision}
+\cvitem{}{\textbf{Teaching:}}
+\cvitem{WS 2017/18}{Knowledge Representation for the Semantic Web at MPI for Informatics}
+\cvlistitem{6 ECTS, Master level course, 25 students}
+\cvlistitem{Delivering lectures and leading tutorial sessions}
+\cvitem{WS 2017/18}{Master thesis seminar at MPI for Informatics}
+\cvlistitem{Full organization of master thesis support seminar}
+\bigskip
+
+\cvitem{}{\textbf{PhD supervision:}}
+\cvlistitem{Mohamed Gad Elrab  (September 2015 - present) (co-supervised with Prof. Gerhard Weikum)}
+\cvitem{}{\textbf{Masters supervision:}}
+\cvlistitem{Thinh Vinh Ho (September 2017 - present): \emph{Hybrid Embedding-based Approach to Rule Learning from Knowledge Graphs}}
+\cvlistitem{Hai Dang Tran (June 2016 - April 2017): \emph{Approach to Nonmonotonic Rule Learning from Knowledge Graphs}}
+\cvitem{}{\textbf{Bachelors supervision:}}
+\cvlistitem{Andreas Humenberger (graduated April, 2014): \emph{Implementing Paracoherent Answer Set Semantics} (co-supervised with Dr. Michael Fink)}
+\cvitem{}{\textbf{Internship supervision:}}
+\cvlistitem{Thomas Pellissier-Tanon (March 2017 - May 2017): \emph{Completeness-aware Rule Learning from Knowledge Graphs}}
+\bigskip
+
+\section{Talks Given at Conferences and Workshops}
+\cvitem{}{\textbf{Towards Nonmonotonic Relational Learning from Knowledge Graphs}}
+\cvitem{}{\emph{26th Inductive Logic Programming Conference}}
+\cvitem{}{\emph{London, United Kingdom, September, 2016}}
+\cvitem{}{\textbf{Towards Practical Deletion Repair of Inconsistent DL-programs}}
+\cvitem{}{\emph{21st European Conference on Artificial Intelligence}}
+\cvitem{}{\emph{Prague, Czech Republic, August, 2014}}
+\cvitem{}{\textbf{Towards Practical Deletion Repair of Inconsistent DL-programs}}
+\cvitem{}{\emph{27th International Workshop on Description Logics}}
+\cvitem{}{\emph{Vienna, Austria, July, 2014}}
+\cvitem{}{\textbf{Data Repair of Inconsistent DL-programs}}
+\cvitem{}{\emph{23rd Joint International Conference on Artificial Intelligence}}
+\cvitem{}{\emph{Beijing, China, August, 2013}}
+\cvitem{}{\textbf{Semantic Independence in DL-programs}}
+\cvitem{}{\emph{6th International Conference on Web Reasoning and Rule Systems}}
+\cvitem{}{\emph{Vienna, Austria, September, 2012}}
+\cvitem{}{\textbf{A Knowledge Base for Justified Information Security Decision-making}}
+\cvitem{}{\emph{4th International Conference on Software and Data Technologies}}
+\cvitem{}{\emph{Sofia, Bulgaria, July, 2009}}
+\cvitem{}{\textbf{A Knowledge Base for Justified Information Security
+    Decision-making (progress report)}}
+\cvitem{}{\emph{Trust Economics Workshop}}
+\cvitem{}{\emph{Newcastle-upon-Tyne, United Kingdom, December, 2008}}
+
+
+\section{Poster Presentations}
+\cvitem{}{\textbf{Towards Nonmonotonic Relational Learning from Knowledge Graphs}}
+\cvitem{}{\emph{26th Inductive Logic Programming Conference}}
+\cvitem{}{\emph{London, United Kingdom, September, 2016}}
+\cvitem{}{\textbf{Inconsistenies in Hybrid Knowledge Bases (PhD Description)}}
+\cvitem{}{\emph{14th International Conference on Principles of Knowledge Representation and Reasoning}}
+\cvitem{}{\emph{Vienna, Austria, July, 2014}}
+\cvitem{}{\textbf{Exploiting Support Sets for Answer Set Programs with External Evaluations}}
+\cvitem{}{\emph{28th Conference on Artificial Intelligence}}
+\cvitem{}{\emph{Quebec, Canada, July, 2014}}
+\cvitem{}{\textbf{AngryHEX: An Angry Birds-playing Agent based on HEX-Programs}}
+\cvitem{}{\emph{Angry Birds AI competition} (\url{http://www.aibirds.org})}
+\cvitem{}{\emph{Prague, Czech Republic, August, 2014}}
+\cvitem{}{\textbf{Data Repair of Inconsistent DL-programs}}
+\cvitem{}{\emph{23rd Joint International Conference on Artificial Intelligence}}
+\cvitem{}{\emph{Beijing, China, August, 2013}}
+
+
+\section{Program Committee Membership}
+\cvlistitem{International Joint Conference on Artificial Intelligence (IJCAI): 2018}
+\cvlistitem{European Semantic Web Conference (ESWC): 2018}
+\cvlistitem{Portuguese Conference on Artificial Intelligence (EPIA): 2017}
+\cvlistitem{International Conference on Artificial Intelligence (AAAI): 2017}
+\cvlistitem{Workshop on Trends and Applications of Answer Set Prog. (TAASP): 2016}
+\cvlistitem{Conference on Web Reasoning and Rule Systems (RR): 2016}
+\cvlistitem{European machine learning and data mining conference (ECMLPKDD): 2016, 2017}
+\cvlistitem{Conference on Knowledge Engineering and Semantic Web (KESW): 2013, 2014, 2015, 2016}
+
+\section{Reviewing for Journals}
+\cvlistitem{Journal of Artificial Intelligence Research (JAIR): 2018}
+\cvlistitem{Journal of Data Mining and Knowledge Discovery (DAMI): 2017}
+\cvlistitem{Journal of Computer Science and Technology (JCST): 2017}
+\cvlistitem{Journal of Data Semantics (JoDS): 2015}
+\cvlistitem{Journal of Web Semantics (JWS): 2014}
+
+\section{Reviewing for Conferences and Workshops}
+\cvlistitem{International Joint Conference on Artificial Intelligence (IJCAI): 2016}
+\cvlistitem{International Description Logic Workshop (DL): 2015}
+\cvlistitem{International Workshop on Nonmonotonic Reasoning (NMR): 2014}
+\cvlistitem{International Workshop on Reactive Concepts in Knowledge
+  Representation (REACTKNOW): 2014}
+\cvlistitem{International Conference on Logic Programming and
+  Nonmonotonic Reasoning (LPNMR): 2013, 2015}
+\cvlistitem{AAAI Conference on Artificial Intelligence (AAAI): 2013}
+\cvlistitem{International Semantic Web Conference (ISWC): 2013}
+\cvlistitem{International Conference on Scalable Uncertainty Management (SUM): 2013}
+\cvlistitem{Int. Conf. on Logic Programming and Nonmonotonic Reasoning (LPNMR): 2013}
+\cvlistitem{Conf. on Knowledge Engineering and Semantic Web (KESW): 2013, 2014, 2015}
+
+
+%----------------------------------------------------------------------------------------
+%       VOLUNTEER WORK IN ORGANIZING CONFERENCES
+%----------------------------------------------------------------------------------------
+\section{Volunteer Work in Organizing Conferences and Public Events}
+\cvlistitem{Vienna Summer of Logic (VSL 2014), Vienna, Austria, July, 2014 }
+\cvlistitem{25th International Conference on Computer-aided verification (CAV
+  2013), St. Petersburg, Russia, July, 2013}
+\cvlistitem{Rhythmic Gymnastics European Champ., Vienna, Austria, May-June, 2013}
+\cvlistitem{6th International Conference on Web Reasoning and Rule Systems,
+  Vienna, Austria, September, 2012}
+\bigskip
+
+
+%----------------------------------------------------------------------------------------
+%	ADDITIONAL INFORMATION SECTION
+%----------------------------------------------------------------------------------------
+
+
+% \section{References}
+% \cvlistitem{O. Univ. Prof. Dr. techn. Thomas Eiter}
+% \cvitem{}{Vienna University of Technology,}
+% \cvitem{}{Head of the Institute of Information Systems}
+% \cvitem{}{Favoritenstra{\ss}e 9-11, 1040 Vienna, Austria}
+% \cvitem{}{Personal website: \href{http://www.kr.tuwien.ac.at/staff/eiter/}{http://www.kr.tuwien.ac.at/staff/eiter/}}
+% \cvitem{}{Phone: +43 1 58801 18460}
+% \cvitem{}{Fax: +43 1 58801 18493}
+% \cvitem{}{Email: eiter@kr.tuwien.ac.at}
+% \cvitem{}{}
+% \cvlistitem{Dr. Michael Fink}
+% \cvitem{}{Vienna University of Technology,}
+% \cvitem{}{Favoritenstra{\ss}e 9-11, 1040 Vienna, Austria}
+% \cvitem{}{Personal website: \href{http://www.kr.tuwien.ac.at/staff/fink/}{http://www.kr.tuwien.ac.at/staff/fink/}}
+% \cvitem{}{Phone: +43 1 58801 18465}
+% \cvitem{}{Fax: +43 1 58801 18493}
+% \cvitem{}{Email: fink@kr.tuwien.ac.at}
+%\huge{\textbf{Appendix: Further Academic Experience}}
+
+\normalsize{\renewcommand\refname{Publication List} %changes default name to Publications
+\nocite{*} %lists everything in the .bib file
+\bibliographystyle{is-unsrt} %hundreds of styles to choose from
+\bibliography{biblio.bib} %name of your .bib file
+\bigskip
+}
+
+%----------------------------------------------------------------------------------------
+% WORKSHOPS AND REFEREED CONFERENCES 
+%----------------------------------------------------------------------------------------
+% \section{Additional Information}
+% \vspace{-.1cm}
+% \renewcommand{\listitemsymbol}{-~} % Changes the symbol used for lists
+% \small{\vspace{-.1cm}
+% \cvitem{}{Candidate for master of sports (gymnastics)}
+% %\cvitem{}{\href{http://en.wikipedia.org/wiki/Unified_Sports_Classification_System_of_the_USSR_and_Russia}{\emph{According to the Unified Sports Classification System
+% %   of Russian Federation}}}
+% %\cvitem{}{Certified fitness instructor (specialized in group classes)}
+% \cvitem{}{Hobbies: volleyball, table tennis, ultimate frisbee.}
+% %\bigskip
+
+%\cvitem{}{\textbf{References} are available upon request.}}
+
+
+
+\end{document}
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS SECTION
+%----------------------------------------------------------------------------------------
+%\section*{Publications}
+
